@@ -1,0 +1,548 @@
+/* Сброс стилей */
+*,
+*::before,
+*::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html, body {
+    height: 100%;
+    font-family: 'gril-reg', sans-serif;
+}
+
+ul {
+    list-style: none;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+a:hover,
+a:focus {
+    text-decoration: none;
+    color: inherit;
+    background: none;
+}
+
+html, body {
+    overflow-x: hidden;
+}
+
+
+/* Подключение шрифтов */
+@font-face {
+    font-family: 'gril-bold';
+    src: url("fonts/Gilroy-Bold.ttf") format("truetype");
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'gril-heavy';
+    src: url("fonts/Gilroy-Heavy.ttf") format("truetype");
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'gril-reg';
+    src: url("fonts/Gilroy-Regular.ttf") format("truetype");
+    font-weight: normal;
+    font-style: normal;
+}
+
+/* Главный блок */
+.header__wrapper {
+    min-height: 100vh;
+    background-image: url("img/wrapper.png");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+    position:relative;
+}
+.header__wrapper::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 100px; /* или больше/меньше — подбирается по вкусу */
+  background: linear-gradient(to bottom, rgba(255, 255, 255, 0) 0%, white 100%);
+  pointer-events: none; /* чтобы не мешал кликам */
+}
+/* Шапка */
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    padding: 20px 40px;
+}
+
+.header__logo {
+    font-size: 2rem;
+    color: white;
+    font-family: gril-bold;
+}
+
+/* Меню */
+.header__nav > ul {
+    display: flex;
+    gap: 120px;
+    font-size: 1.2rem;
+    font-family: gril-reg;
+    color: white;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+.header__nav{
+    margin:0 auto;
+}
+
+.bag > img 
+{
+    height: 40px;
+    width: 40px;
+}
+/* Блок приветствия */
+.welcome {
+    margin-top: 60px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 30px;
+    text-align: center;
+}
+
+.welcome > h1 {
+    font-size: clamp(2rem, 6vw, 5rem);
+    color: white;
+    font-family: gril-bold;
+}
+.welcome > p {
+    font-family: gril-reg;
+    font-size: 24px;
+    color:white;
+}
+.search-wrapper {
+  position: relative;
+  width: 360px;
+}
+
+.search-wrapper input {
+  width: 100%;
+  height: 65px;
+  border-radius: 42px;
+  padding-left: 25px;
+  padding-right: 65px; /* место под кнопку */
+  background-color: rgba(255, 255, 255, 0.15);
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  color: white;
+  font-size: 16px;
+  font-family: gril-reg;
+  outline: none;
+  box-sizing: border-box;
+}
+
+.search-wrapper button {
+  position: absolute;
+  top: 50%;
+  right: 10px;
+  transform: translateY(-50%);
+  height: 45px;
+  width: 45px;
+  background-color: #d78827; /* оранжевый круг */
+  border: none;
+  border-radius: 50%;
+  color: white;
+  font-size: 18px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+}
+.information__wrapper
+{
+    display: flex;
+   
+    min-height: 400px;
+    width: 100%;
+    padding: 15px;
+    background-color: white;
+    margin-top: 45px;
+    margin-left: 10px;
+    padding: 30px;
+    gap:50px;
+    
+}
+.information__block > h3 
+{
+    font-size: 28px;
+    font-family: gril-bold;
+    margin-bottom: 10px;
+
+}
+.information__logo span {
+    white-space: nowrap;
+}
+.information__block {
+    min-height: 250px;
+    min-width: 350px;
+    padding: 40px;
+    font-family: gril-reg;
+   
+}
+.information__block > p 
+{
+    font-size: 20px;
+}
+.information__logo {
+ 
+    padding: 30px;
+    font-family: gril-bold;
+    color: black;
+    height: 90px;
+}
+
+.information__logo > h2 
+{
+    font-size: 40px;
+}
+
+
+
+.information__block > a,
+.information__block > a:visited,
+.information__block > a:hover,
+.information__block > a:focus {
+    color: orange;
+    text-decoration: none;
+}
+
+.information__block > a {
+    font-size: 15px;
+    height: 50px;
+    width: 100px;
+    margin-top: 20px;
+    display: inline-block;
+    color: orange;
+    text-decoration: none;
+}
+.information__block > a::after {
+    content: "";
+    display: inline-block;
+    width: 40px;
+    height: 25px;
+    margin-left: 10px;
+    background-image: url("img/Vector.svg");
+    background-size: contain;
+    background-repeat: no-repeat;
+    vertical-align: middle; /* Выровнять по центру строки */
+}
+/* --- Стили для main__wrapper (по умолчанию для мобильных) --- */
+.main__wrapper {
+    display: flex;
+    flex-direction: column; /* По умолчанию элементы будут в колонку */
+    width: 100%;
+    margin-top: 50px;
+    font-size: 20px;
+    gap: 30px; /* Увеличим общий отступ между секциями */
+    padding: 0 15px; /* Добавим небольшой горизонтальный отступ по краям */
+}
+
+.main__wrapper > span {
+    font-size: clamp(2rem, 5vw, 3rem); /* Адаптивный размер заголовка */
+    color: black;
+    font-family: gril-bold;
+    margin: 0 auto 15px auto; /* Центрируем и сохраняем нижний отступ */
+    text-align: center; /* Центрируем текст */
+}
+
+/* --- Стили для main__nav (по умолчанию для мобильных) --- */
+.main__nav > ul {
+    display: flex;
+    flex-wrap: wrap; /* Позволяем элементам переноситься на новую строку */
+    justify-content: center; /* Центрируем элементы */
+    gap: 15px; /* Уменьшим отступ между кнопками на мобильных */
+    font-size: 1rem; /* Чуть меньше размер шрифта для мобильных */
+    font-family: gril-reg;
+    color: black;
+    background-color: #EEEEEE;
+    padding: 10px; /* Уменьшим padding на мобильных */
+    border-radius: 44px;
+    min-height: auto; /* Уберем min-height, пусть высота будет по контенту */
+    width: 100%; /* Занимаем всю доступную ширину */
+    max-width: 400px; /* Ограничим максимальную ширину для больших экранов */
+    border: 5px solid #EEEEEE;
+    box-sizing: border-box; /* Убедимся, что padding и border включены в общую ширину/высоту */
+    margin: 0 auto; /* Центрируем навигацию */
+}
+
+/* --- Стили для main__shop (по умолчанию для мобильных) --- */
+.main__shop {
+    margin-top: 30px; /* Уменьшим отступ сверху на мобильных */
+    display: flex;
+    flex-direction: column; /* На мобильных элемента будут в колонку */
+    align-items: center; /* Центрируем карточки */
+    gap: 30px; /* Отступ между карточками */
+    min-height: auto; /* Уберем min-height */
+    padding: 0 15px; /* Отступы по бокам, чтобы карточки не прилипали к краям */
+}
+
+.main__cart {
+    width: 100%; /* Карточка занимает всю доступную ширину на мобильных */
+    max-width: 300px; /* Ограничим максимальную ширину карточки */
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Центрируем содержимое карточки */
+    text-align: center; /* Центрируем текст */
+    padding: 20px; /* Внутренние отступы */
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1); /* Легкая тень для выделения карточек */
+    border-radius: 8px; /* Скругленные углы */
+    background-color: white; /* Фон карточки */
+    height: auto; /* Высота по содержимому */
+}
+
+.main__cart p {
+    font-size: 1rem; /* Адаптивный размер шрифта */
+}
+
+.main__cart span {
+    font-size: 1.3rem; /* Адаптивный размер шрифта для названия */
+    margin-top: 10px; /* Уменьшим отступ */
+}
+
+.main__cart__img {
+    width: 100%; /* Изображение заполняет ширину карточки */
+    max-width: 217px; /* Сохраняем исходную максимальную ширину, если нужно */
+    height: auto; /* Высота по пропорциям */
+    object-fit: contain; /* Используем contain, чтобы изображение целиком помещалось */
+    margin-bottom: 15px;
+}
+
+.main__cart__review {
+    justify-content: center; /* Центрируем звезды */
+    margin-top: 10px;
+}
+
+.main__cart__price-block {
+    display: flex;
+    justify-content: space-between; /* Растягиваем элементы на всю ширину */
+    align-items: center;
+    width: 100%;
+    margin-top: 20px; /* Уменьшим отступ */
+    padding: 0 10px; /* Отступы для содержимого блока цены */
+}
+
+.main__cart__price {
+    font-size: 1.4rem; /* Адаптивный размер шрифта */
+}
+
+.main__cart__btn {
+    height: 40px; /* Чуть меньше высота кнопки на мобильных */
+    width: 40px; /* Чуть меньше ширина кнопки на мобильных */
+    font-size: 2rem; /* Адаптивный размер плюсика */
+}
+
+
+.main__viewAll
+{
+    margin: 0 auto;
+    align-items: center;
+
+}
+
+.main__viewAll {
+    display: flex; /* Делаем контейнер флекс-контейнером */
+    justify-content: center; /* Центрируем содержимое по горизонтали */
+    /* align-items: center;  Если нужно вертикальное центрирование внутри родителя, раскомментируйте */
+}
+
+.main__viewAll > a {
+    font-size: 20px;
+    height: 50px;
+    width: 100px;
+    margin-top: 20px;
+    display: inline-block; /* Или block, flex, не принципиально для центрирования самого элемента флекс-контейнером */
+    color: orange;
+    text-decoration: none;
+    text-align: center; /* Центрируем текст внутри ссылки */
+    line-height: 50px; /* Вертикальное выравнивание текста внутри ссылки */
+}
+.main__viewAll > a ::after {
+    content: "";
+    display: inline-block;
+    width: 40px;
+    height: 25px;
+    margin-left: 10px;
+    background-image: url("img/Vector.svg");
+    background-size: contain;
+    background-repeat: no-repeat;
+    vertical-align: middle; /* Выровнять по центру строки */
+}
+
+.footer__wrapper {
+    display: flex;
+    justify-content: center;
+    min-height: 500px;
+    width: 100%;
+    padding: 15px;
+    background-color: #2D2F33;
+    margin-top: 45px;
+    margin-left: 10px;
+    padding: 30px;
+    gap:100px;
+    margin: 0;
+    margin-top: 200px;
+    padding-top: 100px;
+    padding-right: 200px;
+    align-items: center;
+  
+   
+}
+
+.footer__logo
+{
+    font-size: 2rem;
+    color: white;
+    margin-right: 50px;
+}
+
+.footer__logo > p {
+    margin-top: 40px;
+    color: white;
+    font-size: 1rem;
+}
+
+.footer__nav > nav > ul
+{
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    color:white;
+
+}
+.footer__nav > nav > ul > li:first-child
+{
+    color: #d78827;
+}
+
+
+@media (max-width:1200) 
+{
+    .information__wrapper{
+        flex-direction: column;
+    }   
+}
+@media (max-width: 1024px) {
+    .header__nav > ul {
+        gap: 40px;
+        font-size: 1rem;
+    }
+
+    .header {
+        flex-direction: column;
+        align-items: center;
+        gap: 20px;
+    }
+
+    .header__logo {
+        margin-bottom: 10px;
+    }
+   
+   
+}
+
+@media (max-width: 768px) {
+    .header__nav > ul {
+        flex-direction: column;
+        gap: 15px;
+        align-items: center;
+    }
+
+    .welcome {
+        margin-top: 40px;
+    }
+
+    .welcome > h1 {
+        font-size: clamp(1.5rem, 8vw, 3rem);
+    }
+
+     .information__wrapper 
+    {
+        flex-direction: column;
+    }
+
+    .main__wrapper{
+        flex-direction: column;
+    }
+    .main__shop {
+        flex-direction: column;
+    }
+
+    .main__nav {
+        flex-direction: row;
+    }
+     .footer__wrapper {
+        flex-direction: column;
+        padding-right: 10px;
+    }
+
+
+   
+}
+
+
+/* Планшеты и средние экраны (например, 768px и выше) */
+@media (min-width: 768px) {
+    .main__shop {
+        flex-direction: row; /* Возвращаем в строку */
+        flex-wrap: wrap; /* Позволяем карточкам переноситься */
+        justify-content: center; /* Центрируем карточки, если их меньше, чем 4 */
+        gap: 30px; /* Отступ между карточками */
+        padding: 0 20px;
+    }
+
+    .main__cart {
+        width: calc(50% - 30px); /* По две карточки в ряд с учетом gap */
+        max-width: 300px; /* Чтобы карточки не становились слишком широкими */
+    }
+
+    .main__nav > ul {
+        gap: 35px; /* Возвращаем обычный отступ для навигации */
+        font-size: 1.2rem;
+        padding: 15px;
+        width: auto; /* Автоматическая ширина, чтобы ul не растягивался на всю ширину */
+    }
+
+   
+}
+
+/* Десктопные экраны (например, 1024px и выше) */
+@media (min-width: 1024px) {
+    .main__shop {
+        gap: 50px; /* Возвращаем обычный отступ */
+        justify-content: center; /* Центрируем элементы */
+        flex-wrap: nowrap; /* Если нужно, чтобы они не переносились, но это может вызвать горизонтальный скролл */
+    }
+
+    .main__cart {
+        width: auto; /* Позволяем Flexbox определять ширину на основе содержимого и flex-grow/shrink */
+        /* Или, если вы хотите фиксированную ширину, как в исходнике: */
+        /* width: 217px; */
+    }
+
+    .main__wrapper > span {
+        font-size: 3rem; /* Возвращаем исходный размер заголовка */
+    }
+}
